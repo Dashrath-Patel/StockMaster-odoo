@@ -1167,8 +1167,19 @@ If you encounter any issues or have questions:
 
 **Built with ❤️ using React, Node.js, Supabase, and Tailwind CSS**
 
+
 ⭐ Star this repo if you found it helpful!
 
 [Report Bug](https://github.com/Dashrath-Patel/StockMaster-odoo/issues) · [Request Feature](https://github.com/Dashrath-Patel/StockMaster-odoo/issues)
 
 </div>
+
+Connect us 
+LinkedIn: https://www.linkedin.com/in/dashrath-patel/
+          https://x.com/RabindraMishra_
+          
+          
+X: https://x.com/Dashrath_dnf
+   https://x.com/R4hulChauhan
+   https://x.com/KrsnaUnoff3761
+
