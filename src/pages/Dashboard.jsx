@@ -27,20 +27,23 @@ export default function Dashboard() {
     if (!user) return
     
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('profiles')
         .select('full_name')
         .eq('id', user.id)
         .single()
       
-      if (data?.full_name) {
-        setUserName(data.full_name)
-      } else {
-        setUserName(user.email?.split('@')[0] || 'User')
+      if (error) {
+        console.error('Error fetching user profile:', error)
+        setUserName('User')
+        return
       }
+      
+      // Use full_name from profiles table
+      setUserName(data?.full_name || 'User')
     } catch (error) {
       console.error('Error fetching user name:', error)
-      setUserName(user.email?.split('@')[0] || 'User')
+      setUserName('User')
     }
   }
 
@@ -100,30 +103,6 @@ export default function Dashboard() {
         <h1 className="text-4xl font-black uppercase text-white mb-2">{greeting}, {userName}!</h1>
         <p className="text-white text-lg font-semibold">Welcome to your inventory dashboard</p>
       </div>
-
-      {/* Important Alerts */}
-      {(stats.outOfStock > 0 || stats.lowStock > 0) && (
-        <Card className="bg-orange-100 border-4 border-black">
-          <div className="flex items-start gap-4">
-            <div className="p-3 bg-orange-500 border-2 border-black">
-              <AlertTriangle size={32} color="white" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-black uppercase mb-2">⚠️ Attention Required</h2>
-              {stats.outOfStock > 0 && (
-                <p className="font-bold text-red-600 mb-1">
-                  • {stats.outOfStock} product{stats.outOfStock > 1 ? 's are' : ' is'} completely out of stock!
-                </p>
-              )}
-              {stats.lowStock > 0 && (
-                <p className="font-bold text-orange-600">
-                  • {stats.lowStock} product{stats.lowStock > 1 ? 's are' : ' is'} running low on stock
-                </p>
-              )}
-            </div>
-          </div>
-        </Card>
-      )}
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
