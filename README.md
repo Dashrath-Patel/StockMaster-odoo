@@ -1,5 +1,7 @@
 # 📦 StockMaster - Inventory Management System
 
+### 🎯 Team CodeStorm Presents
+
 ![StockMaster](https://img.shields.io/badge/StockMaster-Inventory%20Management-blue?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js)
@@ -7,6 +9,9 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.17-38B2AC?style=for-the-badge&logo=tailwind-css)
 
 A modern, full-featured **inventory management system** built for the **Odoo x SPIT Hackathon 25**. StockMaster features a stunning **Neubrutalism design** with bold borders, hard shadows, and vibrant colors, combined with powerful backend APIs for complete inventory control.
+
+### 🔗 Live Demo
+**[https://stock-master-odoo.vercel.app](https://stock-master-odoo.vercel.app)**
 
 ---
 
@@ -1109,9 +1114,11 @@ SOFTWARE.
 ## 🎯 Hackathon Submission
 
 **Event:** Odoo x SPIT Hackathon 25  
+**Team:** Team CodeStorm  
 **Category:** Inventory Management System  
 **Design Theme:** Neubrutalism  
-**Submitted:** November 2025
+**Submitted:** November 2025  
+**Live Demo:** [https://stock-master-odoo.vercel.app](https://stock-master-odoo.vercel.app)
 
 ### Key Highlights
 
