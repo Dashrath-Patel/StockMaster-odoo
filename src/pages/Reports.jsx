@@ -25,29 +25,25 @@ export default function Reports() {
 
   const fetchReportsData = async () => {
     try {
-      const { data: { user } } = await supabase.auth.getUser()
-      
-      // Fetch products with categories
+      // Fetch products with categories (shared data model - no user_id filter)
       const { data: products } = await supabase
         .from('products')
         .select('*, categories(name, color)')
-        .eq('user_id', user.id)
       
-      // Fetch stock movements for last 30 days
+      // Fetch stock movements for last 30 days (shared data model - no user_id filter)
       const thirtyDaysAgo = new Date()
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
       
       const { data: movements } = await supabase
         .from('stock_movements')
         .select('*')
-        .eq('user_id', user.id)
         .gte('created_at', thirtyDaysAgo.toISOString())
         .order('created_at', { ascending: true })
 
       if (products) {
         // Calculate stats
         const totalProducts = products.length
-        const totalValue = products.reduce((sum, p) => sum + (p.quantity * p.unit_price), 0)
+        const totalValue = products.reduce((sum, p) => sum + (p.quantity * p.selling_price), 0)
         const avgPrice = totalProducts > 0 ? totalValue / totalProducts : 0
         
         setStats({
@@ -59,11 +55,11 @@ export default function Reports() {
 
         // Top 10 products by value
         const topProducts = [...products]
-          .sort((a, b) => (b.quantity * b.unit_price) - (a.quantity * a.unit_price))
+          .sort((a, b) => (b.quantity * b.selling_price) - (a.quantity * a.selling_price))
           .slice(0, 10)
           .map(p => ({
             name: p.name,
-            value: p.quantity * p.unit_price,
+            value: p.quantity * p.selling_price,
             quantity: p.quantity
           }))
         setProductsData(topProducts)
@@ -79,7 +75,7 @@ export default function Reports() {
               count: 0 
             }
           }
-          categoryMap[categoryName].value += product.quantity * product.unit_price
+          categoryMap[categoryName].value += product.quantity * product.selling_price
           categoryMap[categoryName].count += 1
         })
         setCategoryData(Object.values(categoryMap))
@@ -93,9 +89,9 @@ export default function Reports() {
           if (!movementsByDay[date]) {
             movementsByDay[date] = { date, in: 0, out: 0 }
           }
-          if (movement.type === 'IN') {
+          if (movement.type === 'in') {
             movementsByDay[date].in += movement.quantity
-          } else if (movement.type === 'OUT') {
+          } else if (movement.type === 'out') {
             movementsByDay[date].out += movement.quantity
           }
         })
