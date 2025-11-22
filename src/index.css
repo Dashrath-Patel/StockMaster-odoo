@@ -1,1 +1,339 @@
 @import "tailwindcss";
+
+/* Neubrutalism Design System */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neubrutalism Button Styles */
+.btn-brutal {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-primary {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  background-color: #3B82F6;
+  color: #fff;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-primary:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-success {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  background-color: #10B981;
+  color: #fff;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-success:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-danger {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  background-color: #EF4444;
+  color: #fff;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-danger:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-warning {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  background-color: #F59E0B;
+  color: #fff;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-warning:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-secondary {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: 3px solid #000;
+  background-color: #8B5CF6;
+  color: #fff;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-brutal-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Neubrutalism Card Styles */
+.card-brutal {
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.card-brutal-hover {
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 1.5rem;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.card-brutal-hover:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Neubrutalism Input Styles */
+.input-brutal {
+  padding: 0.75rem 1rem;
+  border: 3px solid #000;
+  background-color: #fff;
+  color: #000;
+  font-weight: 500;
+}
+
+.input-brutal:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 4px 4px 0px 0px rgba(59, 130, 246, 1);
+}
+
+/* Neubrutalism Table Styles */
+.table-brutal {
+  width: 100%;
+  border: 3px solid #000;
+}
+
+.table-brutal thead {
+  background-color: #000;
+  color: #fff;
+}
+
+.table-brutal th,
+.table-brutal td {
+  border: 2px solid #000;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.table-brutal tbody tr:nth-child(odd) {
+  background-color: #F3F4F6;
+}
+
+.table-brutal tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+/* Neubrutalism Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-brutal {
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 2rem;
+  max-width: 42rem;
+  width: 100%;
+  margin: 0 1rem;
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Neubrutalism Badge */
+.badge-brutal {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.badge-success {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background-color: #86EFAC;
+}
+
+.badge-danger {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background-color: #FCA5A5;
+}
+
+.badge-warning {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background-color: #FCD34D;
+}
+
+.badge-info {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background-color: #7DD3FC;
+}
+
+/* Neubrutalism Alert */
+.alert-brutal {
+  padding: 1rem;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.alert-success {
+  padding: 1rem;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+  background-color: #BBF7D0;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.alert-danger {
+  padding: 1rem;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+  background-color: #FECACA;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.alert-warning {
+  padding: 1rem;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+  background-color: #FDE68A;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.alert-info {
+  padding: 1rem;
+  border: 3px solid #000;
+  margin-bottom: 1rem;
+  background-color: #BAE6FD;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F3F4F6;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1F2937;
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
