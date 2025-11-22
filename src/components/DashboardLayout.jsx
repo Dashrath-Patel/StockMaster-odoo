@@ -91,14 +91,17 @@ export default function DashboardLayout() {
 
   const fetchNotifications = async () => {
     try {
+      // Fetch all products first
       const { data: products } = await supabase
         .from('products')
         .select('id, name, sku, quantity, reorder_level')
-        .lte('quantity', supabase.raw('reorder_level'))
         .order('quantity', { ascending: true })
 
       if (products) {
-        const alerts = products.map(product => ({
+        // Filter products where quantity <= reorder_level
+        const lowStockProducts = products.filter(p => p.quantity <= p.reorder_level)
+        
+        const alerts = lowStockProducts.map(product => ({
           id: product.id,
           type: product.quantity === 0 ? 'critical' : 'warning',
           title: product.quantity === 0 ? 'Out of Stock' : 'Low Stock Alert',

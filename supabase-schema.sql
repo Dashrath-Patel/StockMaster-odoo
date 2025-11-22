@@ -161,6 +161,9 @@ ALTER TABLE alerts ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Authenticated users can view alerts" ON alerts
   FOR SELECT USING (auth.role() = 'authenticated');
 
+CREATE POLICY "Authenticated users can insert alerts" ON alerts
+  FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
 CREATE POLICY "Authenticated users can update alerts" ON alerts
   FOR UPDATE USING (auth.role() = 'authenticated');
 

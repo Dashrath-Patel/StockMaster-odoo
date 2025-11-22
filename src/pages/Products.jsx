@@ -25,10 +25,10 @@ export default function Products() {
     sku: '',
     category_id: '',
     supplier_id: '',
-    cost_price: 0,
-    selling_price: 0,
-    quantity: 0,
-    reorder_level: 10
+    cost_price: '',
+    selling_price: '',
+    quantity: '',
+    reorder_level: ''
   })
 
   useEffect(() => {
@@ -90,10 +90,10 @@ export default function Products() {
         sku: '',
         category_id: '',
         supplier_id: '',
-        cost_price: 0,
-        selling_price: 0,
-        quantity: 0,
-        reorder_level: 10
+        cost_price: '',
+        selling_price: '',
+        quantity: '',
+        reorder_level: ''
       })
     }
     setModalOpen(true)
@@ -335,17 +335,19 @@ export default function Products() {
               type="number"
               label="Cost Price"
               value={formData.cost_price}
-              onChange={(e) => setFormData({ ...formData, cost_price: parseFloat(e.target.value) || 0 })}
+              onChange={(e) => setFormData({ ...formData, cost_price: e.target.value })}
               required
               step="0.01"
+              min="0"
             />
             <Input
               type="number"
               label="Selling Price"
               value={formData.selling_price}
-              onChange={(e) => setFormData({ ...formData, selling_price: parseFloat(e.target.value) || 0 })}
+              onChange={(e) => setFormData({ ...formData, selling_price: e.target.value })}
               required
               step="0.01"
+              min="0"
             />
           </div>
 
@@ -354,15 +356,17 @@ export default function Products() {
               type="number"
               label="Quantity"
               value={formData.quantity}
-              onChange={(e) => setFormData({ ...formData, quantity: parseInt(e.target.value) || 0 })}
+              onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
               required
+              min="0"
             />
             <Input
               type="number"
               label="Reorder Level"
               value={formData.reorder_level}
-              onChange={(e) => setFormData({ ...formData, reorder_level: parseInt(e.target.value) || 0 })}
+              onChange={(e) => setFormData({ ...formData, reorder_level: e.target.value })}
               required
+              min="0"
             />
           </div>
         </form>

@@ -18,8 +18,8 @@ export default function Suppliers() {
   
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
+    contact_email: '',
+    contact_phone: '',
     address: ''
   })
 
@@ -49,16 +49,16 @@ export default function Suppliers() {
       setEditingSupplier(supplier)
       setFormData({
         name: supplier.name,
-        email: supplier.email || '',
-        phone: supplier.phone || '',
+        contact_email: supplier.contact_email || '',
+        contact_phone: supplier.contact_phone || '',
         address: supplier.address || ''
       })
     } else {
       setEditingSupplier(null)
       setFormData({
         name: '',
-        email: '',
-        phone: '',
+        contact_email: '',
+        contact_phone: '',
         address: ''
       })
     }
@@ -149,17 +149,17 @@ export default function Suppliers() {
               <h3 className="text-xl font-bold mb-4">{supplier.name}</h3>
               
               <div className="space-y-2 mb-4">
-                {supplier.email && (
+                {supplier.contact_email && (
                   <div className="flex items-center gap-2">
                     <Mail size={16} />
-                    <span className="text-sm">{supplier.email}</span>
+                    <span className="text-sm">{supplier.contact_email}</span>
                   </div>
                 )}
                 
-                {supplier.phone && (
+                {supplier.contact_phone && (
                   <div className="flex items-center gap-2">
                     <Phone size={16} />
-                    <span className="text-sm">{supplier.phone}</span>
+                    <span className="text-sm">{supplier.contact_phone}</span>
                   </div>
                 )}
                 
@@ -221,15 +221,15 @@ export default function Suppliers() {
           <Input
             type="email"
             label="Email"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            value={formData.contact_email}
+            onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
           />
           
           <Input
             type="tel"
             label="Phone"
-            value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            value={formData.contact_phone}
+            onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
           />
           
           <Input

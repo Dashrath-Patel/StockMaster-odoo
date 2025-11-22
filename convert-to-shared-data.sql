@@ -31,6 +31,12 @@
     DROP POLICY IF EXISTS "Users can view their own stock movements" ON stock_movements;
     DROP POLICY IF EXISTS "Users can create their own stock movements" ON stock_movements;
 
+    -- Alerts (if exists)
+    DROP POLICY IF EXISTS "Authenticated users can view alerts" ON alerts;
+    DROP POLICY IF EXISTS "Authenticated users can insert alerts" ON alerts;
+    DROP POLICY IF EXISTS "Authenticated users can update alerts" ON alerts;
+    DROP POLICY IF EXISTS "Authenticated users can delete alerts" ON alerts;
+
     -- ============================================================================
     -- 2. CREATE SHARED RLS POLICIES (All authenticated users can access ALL data)
     -- ============================================================================
@@ -80,6 +86,19 @@
 
     CREATE POLICY "All authenticated users can create stock movements" ON stock_movements
     FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
+    -- Alerts: Shared access for all authenticated users
+    CREATE POLICY "All authenticated users can view alerts" ON alerts
+    FOR SELECT USING (auth.role() = 'authenticated');
+
+    CREATE POLICY "All authenticated users can insert alerts" ON alerts
+    FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
+    CREATE POLICY "All authenticated users can update alerts" ON alerts
+    FOR UPDATE USING (auth.role() = 'authenticated');
+
+    CREATE POLICY "All authenticated users can delete alerts" ON alerts
+    FOR DELETE USING (auth.role() = 'authenticated');
 
     -- ============================================================================
     -- 3. MAKE user_id NULLABLE (Optional - keeps track of who created what)
