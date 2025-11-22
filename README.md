@@ -7,6 +7,14 @@
 
 A modern, full-featured inventory management system built for the **Odoo x SPIT Hackathon 25**. Features a stunning **Neubrutalism design** with bold borders, hard shadows, and vibrant colors.
 
+## 🎥 Demo Video
+
+**Watch the complete walkthrough:** [StockMaster Demo Video](https://www.loom.com/share/88390e72034b42afa7f307894ea6add6)
+
+## 🌐 Live Demo
+
+**Try it now:** [https://stock-master-odoo.vercel.app/](https://stock-master-odoo.vercel.app/)
+
 ## ✨ Features
 
 ### 🎨 Neubrutalism Design
