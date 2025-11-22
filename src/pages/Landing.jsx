@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Package, TrendingUp, Users, Shield, BarChart3, Zap, CheckCircle, ArrowRight } from 'lucide-react'
+import dashboardPreview from '../assets/Dashboard Preview.jpeg'
 
 export default function Landing() {
   const features = [
@@ -109,17 +110,16 @@ export default function Landing() {
           </div>
         </div>
 
-        {/* Hero Image/Screenshot Placeholder */}
+        {/* Hero Image/Screenshot */}
         <div className="mt-16 relative">
           <div className="relative mx-auto max-w-5xl">
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-3xl"></div>
             <div className="relative border-8 border-black bg-white p-4 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex items-center justify-center">
-                <div className="text-center">
-                  <BarChart3 size={80} className="mx-auto mb-4 text-gray-400" />
-                  <p className="text-gray-500 font-bold text-lg">Dashboard Preview</p>
-                </div>
-              </div>
+              <img 
+                src={dashboardPreview} 
+                alt="StockMaster Dashboard Preview" 
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </div>
         </div>
